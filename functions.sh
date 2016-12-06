@@ -21,13 +21,22 @@ find_git_commit () {
   fi
 }
 
+find_git_changes () {
+  local status=$(git status --porcelain 2> /dev/null)
+  if [[ "$status" != "" ]]; then
+    git_changes="!"
+  else
+    git_changes=""
+  fi
+}
+
 make_git_prompt () {
   if [ -d .git ]; then
-    export PS1='\[$user_color\]${debian_chroot:+($debian_chroot)}\u\[$txtrst\]:\[$dirs_color\]\w\[$txtwht\](\[$branch_color\]$git_branch\[$txtwht\]|\[$commit_color\]$git_commit\[$txtwht\])\$ '
+    export PS1='\[$user_color\]${debian_chroot:+($debian_chroot)}\u\[$txtrst\]:\[$dirs_color\]\w\[$txtwht\](\[$branch_color\]$git_branch\[$txtwht\]|\[$commit_color\]$git_commit\[$txtwht\])\[$changes_color\]$git_changes\[$txtrst\]\$ '
   else
     export PS1='\[$user_color\]${debian_chroot:+($debian_chroot)}\u\[$txtwht\]:\[$dirs_color\]\w\[$txtwht\]\$ '
   fi
 }
 
-PROMPT_COMMAND="find_git_branch; find_git_commit; make_git_prompt; $PROMPT_COMMAND"
+PROMPT_COMMAND="find_git_branch; find_git_commit; make_git_prompt; find_git_changes; $PROMPT_COMMAND"
 
