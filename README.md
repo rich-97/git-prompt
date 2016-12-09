@@ -10,11 +10,12 @@ cd ~/.git-prompt
 git clone https://github.com/rich-97/git-prompt
 ```
 
-After, write the following lines in your `.bashrc`, `.profile` or `.bash_profile`
+After, write the following lines in your `.bashrc`.
 
 ```shell
-GIT_PROMPT=~/.git-prompt/git-prompt
+declare -x GIT_PROMPT=~/.git-prompt/git-prompt
+export GIT_PROMPT
 source "${GIT_PROMPT}/main.sh"
 ```
 
-Enjoy!.
+Enjoy!
