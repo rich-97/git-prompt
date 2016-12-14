@@ -2,5 +2,5 @@
 commit_color="$txtylw"
 branch_color="$txtcyn"
 user_color="$txtblu"
-dirs_color="$txtblk"
+dirs_color="$txtgrn"
 changes_color="$txtred"

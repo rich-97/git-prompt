@@ -13,8 +13,7 @@ git clone https://github.com/rich-97/git-prompt
 After, write the following lines in your `.bashrc`.
 
 ```shell
-declare -x GIT_PROMPT=~/.git-prompt/git-prompt
-export GIT_PROMPT
+export GIT_PROMPT=~/.git-prompt/git-prompt
 source "${GIT_PROMPT}/main.sh"
 ```
 
