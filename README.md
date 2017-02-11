@@ -1,6 +1,10 @@
 # Git prompt
 
-**Branch personal**
+Quick show
+
+![prompt](prompt.gif)
+
+**This is a branch personal.**
 
 Quick Use:
 
