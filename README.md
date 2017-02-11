@@ -1,5 +1,7 @@
 # Git prompt
+Quick show
 
+![prompt](prompt.gif)
 Quick Use:
 
 Open the terminal and make dir named `.git-prompt`, inside clone the repository
